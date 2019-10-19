@@ -10,10 +10,14 @@
 (insert 228 (list 14 88 22 17 32 84 56 22) 2)
 
 ;; remove task 1.2 (По значению)
-(remove 17 (list 14 88 22 17 32 84 56 22))
+(remove-nth 17 (list 14 88 22 17 32 84 56 22))
 
 ;; remove task 1.2 (По индексу)
-;; сделать что-нибудь
+(defun index_removing (index list)
+  (cond ((null list) nil)
+  ((zerop index) (cdr list))
+  (t (cons (car list) (index_removing (1- index) (cdr list))))))
+(index_removing 5 (list 14 88 22 17 32 84 56 22))
 
 ;; searching task 1.3
 (defun searching (value list &optional (position 0) (result nil))
