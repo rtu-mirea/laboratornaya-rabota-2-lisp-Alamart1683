@@ -9,8 +9,11 @@
 
 (insert 228 (list 14 88 22 17 32 84 56 22) 2)
 
-;; remove task 1.2
+;; remove task 1.2 (По значению)
 (remove 17 (list 14 88 22 17 32 84 56 22))
+
+;; remove task 1.2 (По индексу)
+;; сделать что-нибудь
 
 ;; searching task 1.3
 (defun searching (value list &optional (position 0) (result nil))
