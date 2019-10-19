@@ -11,3 +11,13 @@
 
 ;; remove task 1.2
 (remove 17 (list 14 88 22 17 32 84 56 22))
+
+;; searching task 1.3
+(defun searching (value list &optional (position 0) (result nil))
+    (if (null list) 
+    (if result (reverse result) 0)
+    (if (equal value (car list))
+        (searching value (cdr list) (+ position 1) (cons position result))
+        (searching value (cdr list) (+ position 1) result))))
+
+(searching 17 (list 14 88 22 17 32 84 56  17 22))
